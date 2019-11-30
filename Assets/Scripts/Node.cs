@@ -7,34 +7,47 @@ using System.Collections.Generic;
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
+    public Vector3 positionOffset = new Vector3(-2.5f, 3, 2.5f);
 
-    private GameObject turret;
+    [Header("Optional")]
+    public GameObject turret;
     private Renderer rend;
     private Color StartColor;
-    private Vector3 positionOffset = new Vector3(-2.5f, 3, 2.5f);
 
-
+    BuildManager buildManager;
     void Start()
     {
         rend = GetComponent<Renderer>();
         StartColor = rend.material.color;
+        buildManager = BuildManager.instance;
     }
 
+    public Vector3 GetBuildPosition() {
+        return transform.position + positionOffset;
+    }
     void OnMouseDown() {
+
+        if (!buildManager.CanBuild) {
+            return;
+        }
+        
         if (turret != null) {
             Debug.Log("Can't build there");
             return;
         }
         //Build a turret
-        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation );
+        buildManager.BuildTurretOn(this);
     }
     void OnMouseEnter()
     {
-        if (turret == null)
-        {
-            GetComponent<Renderer>().material.color = hoverColor;
+        if (EventSystem.current.IsPointerOverGameObject()) {
+            return;
         }
+        if (buildManager.CanBuild)
+        {
+            return;
+        }
+        rend.material.color = hoverColor;
     }
     void OnMouseExit()
     {
