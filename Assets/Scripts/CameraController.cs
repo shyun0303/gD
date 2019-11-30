@@ -37,6 +37,7 @@ public class CameraController : MonoBehaviour
             Vector2 dir = (Input.GetTouch(0).position - prevPos).normalized;
             Vector3 vec = new Vector3(dir.y, 0, -dir.x);
 
+
             cam.position -= vec * moveSpeed * Time.deltaTime;
        
             prevPos = Input.GetTouch(0).position;

@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     public float speed = 10f; //구체의 이동속도
     private Transform target; // 이동할 타겟
     private int wavapointIndex = 0; //적출현 레벨
+    public static int  Hp = 10;
 
     void Start()
     {
