@@ -17,8 +17,8 @@ public class InventoryActive : MonoBehaviour
         
     }
     public void InventorySetActive() {
-
-        if (!Inventory.active)
+        
+        if (Inventory.active==false)
         {
             Inventory.SetActive(true);
         }

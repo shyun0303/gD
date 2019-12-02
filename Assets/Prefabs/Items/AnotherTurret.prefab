@@ -348,6 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4884666437787532681}
   - component: {fileID: 8905768461636641953}
+  - component: {fileID: 114904301246387158}
   m_Layer: 0
   m_Name: AnotherTurret
   m_TagString: Untagged
@@ -392,3 +393,16 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4493322609515332996, guid: 4186753b4a6ee0e4f8f981db53b2a50e,
     type: 3}
   firePoint: {fileID: 1146561439518589930}
+--- !u!114 &114904301246387158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905768461636641952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df7e992dfcbb774cbcd91bd5427b503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretName: Turret02
