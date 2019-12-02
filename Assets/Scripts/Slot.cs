@@ -18,7 +18,7 @@ public class Slot : MonoBehaviour
     public void AddItem(GameObject _item, int _count = 1) {
         item = _item;
         itemCount = _count;
-        itemImage.sprite = item.itemImage;
+
     }
     void Start()
     {
