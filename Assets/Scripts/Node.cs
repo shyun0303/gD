@@ -35,8 +35,8 @@ public class Node : MonoBehaviour
             Debug.Log("Can't build there");
             return;
         }
-        //Build a turret
-        buildManager.BuildTurretOn(this);
+    
+        buildManager.BuildTurretOn(this,turret);
     }
     void OnMouseEnter()
     {

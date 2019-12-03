@@ -11,7 +11,6 @@ public class TurretRandom : MonoBehaviour
  
     private Slot[] slots;
     private Shop shop;
-    public int i = 0;
     private void Start()
     {
         slots = go_SlotsParent.GetComponentsInChildren<Slot>();
@@ -28,26 +27,33 @@ public class TurretRandom : MonoBehaviour
         }
     }
     public void Inventory_add() {
-        if (PlayerStats.Money >= 100 && i <= slots.Length-1)
+        if (PlayerStats.Money >= 100)
         {
             int k = 0;
             int r = Random.Range(0, item.Length);
             PlayerStats.Money -= 100;
             
-            if (slots[i].transform.childCount == 0)
-            {
-                RectTransform child = Instantiate(item[r]);
-                child.transform.position = slots[i].transform.position;
-                child.transform.SetParent(slots[i].transform);
-             
-                
-            }
-            else {
-                i++;
-                RectTransform child = Instantiate(item[r]);
-                child.transform.position = slots[i].transform.position;
-                child.transform.SetParent(slots[i].transform);
+            RectTransform child = Instantiate(item[r]);
+            while (k<slots.Length) {
 
+                if (slots[k].transform.childCount == 0 || slots[k].transform.GetChild(0).tag == child.tag)
+                {
+                    child.transform.position = slots[k].transform.position;
+                    child.transform.SetParent(slots[k].transform);
+                    Debug.Log(slots[k].transform.GetChild(0).tag);
+                   
+                    break;
+
+                }
+                else
+                {
+                    k++;
+                    
+                    //i++;
+                    //RectTransform child = Instantiate(item[r]);
+                    //child.transform.position = slots[i].transform.position;
+                    //child.transform.SetParent(slots[i].transform);
+                }
      
             }
             
