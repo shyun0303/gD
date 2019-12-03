@@ -6,6 +6,9 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
     private Shop shop;
+    public TurretRandom tr;
+    public int amount;
+
     void Awake()
     {
         if (instance != null) {
@@ -32,9 +35,12 @@ public class BuildManager : MonoBehaviour
         {
             turret = Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
             node.turret = turret;
+
+
             turretToBuild.prefab = null;
+
+
         }
-      
     }
     public void SelectTurretToBuild(TurretBluePrint turret) {
         turretToBuild = turret;
