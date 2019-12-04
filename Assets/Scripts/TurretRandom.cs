@@ -33,8 +33,8 @@ public class TurretRandom : MonoBehaviour
             int k = 0;
             int r = Random.Range(0, item.Length);
             PlayerStats.Money -= 100;
-            RectTransform child = Instantiate(item[r]);
             
+            RectTransform child = Instantiate(item[r]);
             amountsOfitems = child.GetChild(0).GetChild(0).GetComponent<Text>();
             while (k<slots.Length) {
 
@@ -80,7 +80,7 @@ public class TurretRandom : MonoBehaviour
 
         }
         }
-  
+
 
 
     }
