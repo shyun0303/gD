@@ -65,9 +65,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BuildManager.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\BuyItem.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\InventoryActive.cs" />
+    <Compile Include="Assets\Scripts\itemBuffer.cs" />
+    <Compile Include="Assets\Scripts\itemProperty.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="Assets\Scripts\TurretBluePrint.cs" />
     <Compile Include="Assets\Scripts\TurretInfo.cs" />
     <Compile Include="Assets\Scripts\TurretRandom.cs" />
+    <Compile Include="Assets\Scripts\turretUIActive.cs" />
     <Compile Include="Assets\Scripts\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Waypoints.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

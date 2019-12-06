@@ -27,14 +27,13 @@ public class TurretRandom : MonoBehaviour
             Debug.Log("생성 불가");
         }
     }
-    public void Inventory_add() {
-        if (PlayerStats.Money >= 100)
-        {
-            int k = 0;
-            int r = Random.Range(0, item.Length);
-            PlayerStats.Money -= 100;
+    //public void Inventory_add() {
+     //   if (PlayerStats.Money >= 100)
+       // {
+      
+         //   PlayerStats.Money -= 100;
             
-            RectTransform child = Instantiate(item[r]);
+          /*  RectTransform child = Instantiate(item[r]);
             amountsOfitems = child.GetChild(0).GetChild(0).GetComponent<Text>();
             while (k<slots.Length) {
 
@@ -74,12 +73,12 @@ public class TurretRandom : MonoBehaviour
                     //child.transform.SetParent(slots[i].transform);
                 }
      
-            }
+            }*/
             
 
 
-        }
-        }
+      //  }
+        //}
 
 
 
